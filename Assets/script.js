@@ -15,39 +15,39 @@ $('.saveBtn').on('click', function (event) {
 });
 
 // Gets items from local storage
-$('#8am .input').val(localStorage.getItem('8am'));
-$('#9am .input').val(localStorage.getItem('9am'));
-$('#10am .input').val(localStorage.getItem('10am'));
-$('#11am .input').val(localStorage.getItem('11am'));
-$('#12pm .input').val(localStorage.getItem('12pm'));
-$('#1pm .input').val(localStorage.getItem('1pm'));
-$('#2pm .input').val(localStorage.getItem('2pm'));
-$('#3pm .input').val(localStorage.getItem('3pm'));
-$('#4pm .input').val(localStorage.getItem('4pm'));
-$('#5pm .input').val(localStorage.getItem('5pm'));
+$('#Time08am .input').val(localStorage.getItem('Time08am'));
+$('#Time09am .input').val(localStorage.getItem('Time09am'));
+$('#Time10am .input').val(localStorage.getItem('Time10am'));
+$('#Time11am .input').val(localStorage.getItem('Time11am'));
+$('#Time12pm .input').val(localStorage.getItem('Time12pm'));
+$('#Time13pm .input').val(localStorage.getItem('Time13pm'));
+$('#Time14pm .input').val(localStorage.getItem('Time14pm'));
+$('#Time15pm .input').val(localStorage.getItem('Time15pm'));
+$('#Time16pm .input').val(localStorage.getItem('Time16pm'));
+$('#Time17pm .input').val(localStorage.getItem('Time17pm'));
 
 // Updates the .descrption boxes with provided css styling
 
 function updateColor() {
 
-    var timeNow = moment().format('HH');
+    var currentTime = moment().format('HH');
 
 
     $('.time-block').each(function () {
 
-        var scheduleTime = $(this).attr("id").split("hour")[1];
+        var scheduleTime = $(this).attr("id").split("Time")[1];
         //["8", "9", "10 ", "11", "12", "1", "2", "3", "4", "5",]
 
-        if (timeNow === scheduleTime) {
+        if (currentTime === scheduleTime) {
             $(this).addClass("present");
-        } else if (timeNow < scheduleTime) {
+          } else if (currentTime < scheduleTime) {
             $(this).removeClass("present");
             $(this).addClass("future");
-        } else if (timeNow > scheduleTime) {
+          } else if (currentTime > scheduleTime) {
             $(this).removeClass("future");
             $(this).addClass("past");
-        }
-    });
+          }
+        })
 }
 
 // Runs the function above
