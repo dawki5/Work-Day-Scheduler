@@ -4,7 +4,7 @@ setInterval(function () {
     currentDay.textContent = moment().format('MMMM Do YYYY, h:mm:ss a');
 }, 1000)
 
-
+// Adds functionality to the save button 
 $('.saveBtn').on('click', function (event) {
     event.preventDefault();
 
@@ -26,10 +26,11 @@ $('#hour15 .description').val(localStorage.getItem('hour15'));
 $('#hour16 .description').val(localStorage.getItem('hour16'));
 $('#hour17 .description').val(localStorage.getItem('hour17'));
 
+// Updates the .descrption boxes with provided css styling
 
 function updateColor() {
 
-    var timeNow = moment().format('h');
+    var timeNow = moment().format('HH');
 
 
     $('.time-block').each(function () {
@@ -49,6 +50,6 @@ function updateColor() {
     });
 }
 
-
+// Runs the function above
 updateColor();
 
