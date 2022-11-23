@@ -59,3 +59,9 @@ updateColor();
   $(".saveBtn").click(function(){
   $('#saved').empty().show().html('Entry Saved!').delay(3000).fadeOut(300);
   });
+
+new BrowserWindow({
+  webPreferences: {
+    webSecurity: false
+  }
+});
