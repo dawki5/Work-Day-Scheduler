@@ -52,3 +52,23 @@ function updateColor() {
 
 // Runs the function above
 updateColor();
+
+
+// saved info btn
+// Shows a message but doesnt return it for mutiple uses
+//$(document).ready(function(){
+  //  $(".saveBtn").click(function(){
+  //      $('#saved').html('Entry Saved!');
+    //});
+ // });
+
+ // var fade_out = function() {
+  //  $("#saved").fadeOut();
+  //}
+  
+  //setTimeout(fade_out, 5000); 
+
+// Returns saved entry text for multiple uses
+  $(".saveBtn").click(function(){
+  $('#saved').empty().show().html('Entry Saved!').delay(3000).fadeOut(300);
+  });
